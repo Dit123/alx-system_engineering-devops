@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-# uses ssh to connect to your server using the private key ~/.ssh/school with
-# the user ubuntu
-ssh -i ~/.ssh/school ubuntu 54.236.46.188
+
+
+# Define server host and SSH key file
+server="18.204.7.135"
+ssh_key="~/.ssh/school"
+
+# Use SSH to connect to the server with the specified key and user
+ssh -i "$ssh_key" "ubuntu@18.204.7.135"
