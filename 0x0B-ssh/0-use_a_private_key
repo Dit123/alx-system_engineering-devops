@@ -6,4 +6,4 @@ server="18.204.7.135"
 ssh_key="~/.ssh/school"
 
 # Use SSH to connect to the server with the specified key and user
-ssh -i "$ssh_key" "ubuntu@18.204.7.135"
+ssh -i "$ssh_key" "ubuntu@$server"
