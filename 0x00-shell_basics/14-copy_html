@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Source directory (current working directory)
+src_dir=$(pwd)
+
+# Destination directory (parent of the working directory)
+dest_dir=$(dirname "$src_dir")
+
+# Copy HTML files that do not exist in the parent directory
+# or are newer than the versions in the parent directory
+for file in "$src_dir"/*.html; do
+    if [ -f "$dest_dir/$(basename "$file")" ] && [ "$file" -ot "$dest_dir/$(basename "$file")" ]; then
+        echo "Skipping $(basename "$file") (already exists and is not newer)"
+    else
+        cp "$file" "$dest_dir"
+        echo "Copied $(basename "$file") to $dest_dir"
+    fi
+done
+

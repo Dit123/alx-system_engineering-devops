@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Destination directory
+dest_dir="/tmp/u"
+
+# Check if the destination directory exists
+if [ ! -d "$dest_dir" ]; then
+    echo "Destination directory $dest_dir does not exist. Please create it."
+    exit 1
+fi
+
+# Move files beginning with an uppercase letter to the destination directory
+for file in [A-Z]*; do
+    if [ -f "$file" ]; then
+        mv "$file" "$dest_dir"
+        echo "Moved $file to $dest_dir"
+    fi
+done
+

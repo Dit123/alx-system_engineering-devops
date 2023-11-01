@@ -1,0 +1,21 @@
+
+#!/bin/bash
+
+# List files in the current directory in long format (including hidden files)
+echo "Listing files in the current directory:"
+ls -la
+
+# Change to the parent directory
+cd ..
+
+# List files in the parent directory in long format (including hidden files)
+echo -e "\nListing files in the parent directory:"
+ls -la
+
+# Change to the /boot directory
+cd /boot
+
+# List files in the /boot directory in long format (including hidden files)
+echo -e "\nListing files in the /boot directory:"
+ls -la
+

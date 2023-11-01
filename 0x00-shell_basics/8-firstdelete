@@ -1,0 +1,3 @@
+#!/bin/betty
+rm /tmp/my_first_directory/betty
+

@@ -1,0 +1,12 @@
+
+#!/bin/bash
+
+# Get the previous working directory
+previous_directory=$(pwd)
+
+# Change the working directory to the previous one
+cd -
+
+# Display the new working directory
+echo "Changed directory from $previous_directory to $(pwd)"
+

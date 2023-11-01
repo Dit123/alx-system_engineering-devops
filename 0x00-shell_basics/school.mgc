@@ -1,0 +1,6 @@
+0 string SCHOOL School data file
+
+#!/bin/bash
+file -m school.mgc school
+#!/bin/bash
+file -m school.mgc school
