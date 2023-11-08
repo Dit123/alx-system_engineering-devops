@@ -1,5 +1,10 @@
-Host 54.236.46.188
-     HostName 54.236.46.188
-     User ubuntu
-     IdentityFile ~/.ssh/holberton
-     PasswordAuthentication no
+#!/usr/bin/evn bash
+# SSH client configuration
+
+Host *
+    passwordAuthentication no
+    Identityfile ~/.ssh/school
+    SendEnv LANG LC_*
+    HashKnownHost yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no

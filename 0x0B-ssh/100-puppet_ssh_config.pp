@@ -1,11 +1,17 @@
-# client configuration file
-$file_content = file('/etc/ssh/ssh_config')
-$config = "${file_content}\
-    IdentityFile ~/.ssh/school
-    PasswordAuthentication no
-"
-file {  'school':
-  ensure  => 'present',
-  path    => '/etc/ssh/ssh_config',
-  content => $config
+#!/usr/bin/env bash
+# Using puppet to connect without password
+
+file { '/etc/ssh/ssh_config':
+   ensure => present,
 }
+
+file_line { 'Turn off passwd auth':
+  path  => '/etc/ssh/ssh_config',
+  line  => 'PasswordAuthentication no',
+  match =>  '^#PasswordAuthentication',
+}
+
+file_line { 'Declear identity file':
+   path  => '/etc/ssh/ssh_config',
+  line  => 'IdentityFile ~/.ssh/school',
+  match =>  '^#IdentityFile',
